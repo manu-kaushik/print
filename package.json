@@ -1,14 +1,29 @@
 {
   "name": "@bitterbyter/print",
-  "version": "1.0.1",
-  "description": "Print function for JavaScript",
+  "version": "2.0.0",
+  "description": "Logging tool with clean APIs, automatic timestamps, and smart data type detection",
   "main": "index.js",
+  "types": "index.d.ts",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "print",
-    "js-print"
+    "logging",
+    "console",
+    "debug",
+    "timer",
+    "performance",
+    "typescript"
   ],
   "author": "BitterByter",
   "license": "MIT",
@@ -16,5 +31,9 @@
     "type": "git",
     "url": "https://github.com/bitter-byter/print.git"
   },
-  "homepage": "https://github.com/bitter-byter/print#readme"
+  "homepage": "https://github.com/bitter-byter/print#readme",
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "typescript": "^5.9.3"
+  }
 }
