@@ -1,6 +1,6 @@
 {
   "name": "@bitterbyter/print",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A lightweight logger with automatic timestamps, smart data type detection, and timer management",
   "type": "module",
   "main": "dist/index.cjs",
