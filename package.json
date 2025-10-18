@@ -1,20 +1,30 @@
 {
   "name": "@bitterbyter/print",
   "version": "2.0.0",
-  "description": "Logging tool with clean APIs, automatic timestamps, and smart data type detection",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "type": "commonjs",
+  "description": "A lightweight logger with automatic timestamps, smart data type detection, and timer management",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.js",
-      "types": "./index.d.ts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "@types/jest": "^29.5.0"
   },
   "keywords": [
     "print",
@@ -25,15 +35,11 @@
     "performance",
     "typescript"
   ],
-  "author": "BitterByter",
+  "author": "Manu Kaushik",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitter-byter/print.git"
+    "url": "https://github.com/manu-kaushik/print.git"
   },
-  "homepage": "https://github.com/bitter-byter/print#readme",
-  "devDependencies": {
-    "@types/node": "^24.8.1",
-    "typescript": "^5.9.3"
-  }
+  "homepage": "https://github.com/manu-kaushik/print#readme"
 }
