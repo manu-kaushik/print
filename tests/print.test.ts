@@ -40,27 +40,27 @@ describe('Print Package Tests', () => {
 
         test('success() should call console.log with SUCCESS', () => {
             success('test message');
-            expect(mockConsole.log).toHaveBeenCalledWith(expect.stringContaining('SUCCESS'));
+            expect(mockConsole.log).toHaveBeenCalledWith(expect.stringContaining('SUCCESS'), expect.any(String));
         });
 
         test('error() should call console.error with ERROR', () => {
             error('test message');
-            expect(mockConsole.error).toHaveBeenCalledWith(expect.stringContaining('ERROR'));
+            expect(mockConsole.error).toHaveBeenCalledWith(expect.stringContaining('ERROR'), expect.any(String));
         });
 
         test('info() should call console.info with INFO', () => {
             info('test message');
-            expect(mockConsole.info).toHaveBeenCalledWith(expect.stringContaining('INFO'));
+            expect(mockConsole.info).toHaveBeenCalledWith(expect.stringContaining('INFO'), expect.any(String));
         });
 
         test('warn() should call console.warn with WARN', () => {
             warn('test message');
-            expect(mockConsole.warn).toHaveBeenCalledWith(expect.stringContaining('WARN'));
+            expect(mockConsole.warn).toHaveBeenCalledWith(expect.stringContaining('WARN'), expect.any(String));
         });
 
         test('debug() should call console.debug with DEBUG in development', () => {
             debug('test message');
-            expect(mockConsole.debug).toHaveBeenCalledWith(expect.stringContaining('DEBUG'));
+            expect(mockConsole.debug).toHaveBeenCalledWith(expect.stringContaining('DEBUG'), expect.any(String));
         });
 
         test('debug() should not call console.debug in production', () => {
@@ -122,14 +122,14 @@ describe('Print Package Tests', () => {
             startTimer('test-timer');
             endTimer('test-timer');
 
-            expect(mockConsole.info).toHaveBeenCalledWith(expect.stringContaining('Timer "test-timer" completed'));
+            expect(mockConsole.info).toHaveBeenCalledWith(expect.stringContaining('Timer "test-timer" completed'), expect.any(String));
         });
 
         test('endTimer() should log completion time', () => {
             startTimer('test-timer');
             endTimer('test-timer');
 
-            expect(mockConsole.info).toHaveBeenCalledWith(expect.stringContaining('Timer "test-timer" completed'));
+            expect(mockConsole.info).toHaveBeenCalledWith(expect.stringContaining('Timer "test-timer" completed'), expect.any(String));
         });
 
         test('endTimer() should warn if timer not started', () => {

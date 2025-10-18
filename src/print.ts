@@ -54,11 +54,10 @@ const print = (type: LogType, data: any) => {
   const formattedData = formatData(data);
 
   let log = formattedData;
-
-  const style = styles[type];
+  let style = styles[type];
 
   if (style) {
-    log = `%c[${type.toUpperCase()}]${style} ${log}`;
+    log = `%c[${type.toUpperCase()}] ${log}`;
   }
 
   if (config.timestamps) {
@@ -70,22 +69,22 @@ const print = (type: LogType, data: any) => {
       console.log(log);
       break;
     case "info":
-      console.info(log);
+      console.info(log, style || "");
       break;
     case "warn":
-      console.warn(log);
+      console.warn(log, style || "");
       break;
     case "error":
-      console.error(log);
+      console.error(log, style || "");
       break;
     case "success":
-      console.log(log);
+      console.log(log, style || "");
       break;
     case "debug":
-      console.debug(log);
+      console.debug(log, style || "");
       break;
     default:
-      console.log(log);
+      console.log(log, style || "");
       break;
   }
 };
